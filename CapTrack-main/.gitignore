@@ -1,0 +1,19 @@
+# Node
+node_modules/
+dist/
+.env
+.env.local
+
+# Maven
+target/
+*.jar
+*.war
+
+# Database
+backend/data/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+.DS_Store
