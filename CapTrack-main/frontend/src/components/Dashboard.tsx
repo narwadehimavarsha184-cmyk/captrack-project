@@ -64,7 +64,7 @@ const Dashboard: React.FC<DashboardProps> = ({ transactions, children }) => {
     };
   }, [transactions]);
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
@@ -138,8 +138,14 @@ const Dashboard: React.FC<DashboardProps> = ({ transactions, children }) => {
             <ResponsiveContainer width="100%" height="100%">
               <ComposedChart data={chartData} margin={{ top: 10, right: 20, bottom: 5, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#cbd5e1" vertical={false} opacity={0.3} />
-                <XAxis dataKey="id" stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(val, index) => chartData[index]?.displayDate || ''} />
-                <YAxis stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
+<XAxis
+  dataKey="id"
+  stroke="#94a3b8"
+  fontSize={12}
+  tickLine={false}
+  axisLine={false}
+  tickFormatter={(_, index) => chartData[index]?.displayDate || ''}
+/>                <YAxis stroke="#94a3b8" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `$${value}`} />
                 <Tooltip content={<CustomTooltip />} />
                 <Bar dataKey="change" radius={[4, 4, 4, 4]} barSize={20}>
                   {chartData.map((entry, index) => (

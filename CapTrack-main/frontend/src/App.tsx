@@ -5,7 +5,7 @@ import DashboardPage from './components/DashboardPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
 
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
   const { isAuthenticated } = useAuth();

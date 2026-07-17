@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { type Transaction } from '../types';
 
-const API_URL = 'http://localhost:8080/api/transactions';
+
 
 const api = axios.create({
   baseURL: 'http://localhost:8080/api'
